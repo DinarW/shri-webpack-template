@@ -29,8 +29,16 @@ const config: webpack.Configuration = {
             "buffer": require.resolve("buffer"),
             "stream": false,
         },
+        extensions: ['.tsx', '.ts', '.js'],
     },
     module: {
+        rules: [
+            {
+                test: /\.(ts|tsx)$/i,
+                loader: 'ts-loader',
+                exclude: ['/node_modules'],
+            }
+        ]
     },
 };
 
